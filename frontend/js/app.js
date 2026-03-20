@@ -17,7 +17,15 @@ async function loadModule(moduleName) {
   const script = document.createElement("script");
   script.src = `./modules/${moduleName}/${moduleName}.js?v=${Date.now()}`;
   script.id = "dynamic-module-script";
-  document.body.appendChild(script);
+  script.onload = () => {
+  if (moduleName === "movimentacoes") {
+    if (typeof carregarMovimentacoes === "function") {
+      carregarMovimentacoes();
+    }
+  }
+};
+
+document.body.appendChild(script);
 
   ativarLinkSidebar(moduleName);
 }

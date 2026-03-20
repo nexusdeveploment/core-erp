@@ -1,63 +1,41 @@
 <div class="page-header">
-
-<h1>Movimentações de Estoque</h1>
-<p>Registre entradas e saídas de produtos</p>
-
+  <h1>Movimentações de Estoque</h1>
+  <p>Registre entradas e saídas de produtos</p>
 </div>
 
+<div class="card" style="margin-bottom: 20px">
+  <div style="padding: 20px">
+    <h3>Nova Movimentação</h3>
+    
+    <div style="display: flex; gap: 10px; margin-top: 10px">
+      <input id="produtoId" class="input" placeholder="ID do Produto">
 
-<div class="card" style="margin-bottom:20px">
+      <select id="tipoMov" class="select">
+        <option value="ENTRADA">Entrada</option>
+        <option value="SAIDA">Saída</option>
+      </select>
 
-<div style="padding:20px">
+      <input id="quantidadeMov" class="input" type="number" placeholder="Quantidade">
 
-<h3>Nova Movimentação</h3>
-
-<div style="display:flex; gap:10px; margin-top:10px">
-
-<input id="produtoId" class="input" placeholder="ID do Produto">
-
-<select id="tipoMov" class="select">
-<option value="ENTRADA">Entrada</option>
-<option value="SAIDA">Saída</option>
-</select>
-
-<input id="quantidadeMov" class="input" type="number" placeholder="Quantidade">
-
-<button class="btn" onclick="registrarMovimentacao()">
-Registrar
-</button>
-
+      <button class="btn" onclick="registrarMovimentacao()">Registrar</button>
+    </div>
+  </div>
 </div>
-
-</div>
-
-</div>
-
 
 <div class="card table-card">
-
-<div class="table-wrapper">
-
-<table class="table">
-
-<thead>
-
-<tr>
-
-<th>ID</th>
-<th>Produto</th>
-<th>Tipo</th>
-<th>Quantidade</th>
-<th>Data</th>
-
-</tr>
-
-</thead>
-
-<tbody id="movimentacoesTabela"></tbody>
-
-</table>
-
-</div>
-
+  <div class="table-wrapper">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Produto</th>
+          <th>Tipo</th>
+          <th>Quantidade</th>
+          <th>Data</th>
+        </tr>
+      </thead>
+      <tbody id="movimentacoesTabela">
+        </tbody>
+    </table>
+  </div>
 </div>

@@ -58,4 +58,8 @@ public class MovimentacaoService {
     public List<Movimentacao> buscarPorProduto(Long produtoId) {
         return movimentacaoRepository.findByProdutoId(produtoId);
     }
+
+    public List<Movimentacao> listarTodas(){
+        return movimentacaoRepository.findAll();
+    }
 }

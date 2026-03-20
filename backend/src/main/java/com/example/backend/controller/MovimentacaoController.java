@@ -30,4 +30,9 @@ public class MovimentacaoController {
     public List<Movimentacao> buscarPorProduto(@PathVariable Long produtoId) {
         return movimentacaoService.buscarPorProduto(produtoId);
     }
+
+    @GetMapping("/produtos")
+    public List<Movimentacao> listarTodas() {
+        return movimentacaoService.listarTodas();
+    }
 }
