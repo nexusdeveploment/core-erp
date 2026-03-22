@@ -2,6 +2,8 @@ package com.example.backend.entity;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "produtos")
 public class Produto {
@@ -14,7 +16,7 @@ public class Produto {
 
     private String codigo;
 
-    private Double preco;
+    private BigDecimal preco;
 
     private Integer quantidade;
 
@@ -53,11 +55,11 @@ public class Produto {
         this.codigo = codigo;
     }
 
-    public Double getPreco() {
+    public BigDecimal getPreco() {
         return preco;
     }
 
-    public void setPreco(Double preco) {
+    public void setPreco(BigDecimal preco) {
         this.preco = preco;
     }
 

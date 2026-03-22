@@ -68,6 +68,42 @@ ADD CONSTRAINT fk_produto_categoria
 FOREIGN KEY (categoria_id)
 REFERENCES categorias(id);
 
+create table venda (
+    id_venda BIGINT AUTO_INCREMENT PRIMARY KEY,
+    data_venda timestamp,
+    valor_total decimal,
+    id_usuario BIGINT NOT NULL,
+    status varchar(20),
+
+    CONSTRAINT fk_uservenda
+        FOREIGN KEY (id_usuario)
+        REFERENCES usuarios(id)
+);
+
+alter table venda add (
+subtotal DECIMAL(10,2),
+desconto DECIMAL(10,2)
+);
+
+create table item_venda(
+    id_itemvenda BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id_venda BIGINT NOT NULL,
+    id_produto BIGINT NOT NULL,
+    quantidade int,
+    preco_unitario decimal,
+    subtotal decimal,
+
+    constraint fk_idvenda
+    foreign key(id_venda)
+    references venda(id_venda),
+
+    constraint fk_produtodavenda
+    foreign key(id_produto)
+    references produtos(id)
+);
+
+DROP TABLE item_venda;
+DROP TABLE venda;
 
 
 

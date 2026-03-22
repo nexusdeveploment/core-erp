@@ -18,11 +18,20 @@ async function loadModule(moduleName) {
   script.src = `./modules/${moduleName}/${moduleName}.js?v=${Date.now()}`;
   script.id = "dynamic-module-script";
   script.onload = () => {
+
   if (moduleName === "movimentacoes") {
     if (typeof carregarMovimentacoes === "function") {
       carregarMovimentacoes();
     }
   }
+
+  // 🔥 AQUI É A CORREÇÃO
+  if (moduleName === "vendas") {
+    if (typeof initVendas === "function") {
+      initVendas();
+    }
+  }
+
 };
 
 document.body.appendChild(script);

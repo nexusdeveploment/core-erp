@@ -24,7 +24,7 @@ async function carregarMovimentacoes() {
     const data = await res.json();
 
     tabela.innerHTML = "";
-
+// aqui que fica a tabela
     data.forEach(mov => {
       tabela.innerHTML += `
         <tr>

@@ -1,0 +1,81 @@
+<div class="page-container">
+
+  <div class="page-header">
+    <h1>Vendas</h1>
+    <p>Realize uma nova venda</p>
+  </div>
+
+  <!-- FORM -->
+  <div class="card" style="padding: 16px; margin-bottom: 16px;">
+    <div class="toolbar">
+
+      <div class="toolbar-left">
+        <select id="produtoSelect" class="select">
+          <option value="">Selecione um produto</option>
+        </select>
+
+        <input type="number" id="quantidade" class="input" placeholder="Quantidade">
+    
+        <button class="btn" onclick="adicionarItem()">Adicionar</button>
+
+        <button class="btn" onclick="finalizarVenda()">Confirmar Venda</button>
+    
+      </div>
+
+      <div class="toolbar-right">
+        <input
+          type="number"
+          id="desconto"
+          class="input"
+          placeholder="Desconto"
+          oninput="calcularTotal()"
+        >
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TABELA -->
+  <div class="card table-card">
+    <div class="table-wrapper">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Produto</th>
+            <th>Qtd</th>
+            <th>Preço</th>
+            <th>Subtotal</th>
+            <th>Data</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="tabelaItens"></tbody>
+      </table>
+    </div>
+
+    <div class="empty-state" id="emptyState">
+      Nenhum item adicionado
+    </div>
+  </div>
+
+  <!-- RESUMO -->
+  <!-- <div class="grid-cards" style="margin-top: 20px;">
+
+    <div class="card metric-card">
+      <span>Subtotal</span>
+      <strong>R$ <span id="subtotal">0.00</span></strong>
+    </div>
+
+    <div class="card metric-card">
+      <span>Desconto</span>
+      <strong>R$ <span id="descontoValor">0.00</span></strong>
+    </div>
+
+    <div class="card metric-card">
+      <span>Total</span>
+      <strong>R$ <span id="total">0.00</span></strong>
+    </div> -->
+
+  </div>
+
+</div>

@@ -1,16 +1,18 @@
 package com.example.backend.dto;
 
+import java.math.BigDecimal;
+
 public class RelatorioEstoqueDTO {
 
     private String produto;
     private Integer quantidade;
-    private Double preco;
-    private Double valorTotal;
+    private BigDecimal preco;
+    private BigDecimal valorTotal;
     private String fornecedor;
     private String categoria;
 
-    public RelatorioEstoqueDTO(String produto, Integer quantidade, Double preco,
-                               Double valorTotal, String fornecedor, String categoria) {
+    public RelatorioEstoqueDTO(String produto, Integer quantidade, BigDecimal preco,
+                               BigDecimal valorTotal, String fornecedor, String categoria) {
         this.produto = produto;
         this.quantidade = quantidade;
         this.preco = preco;
@@ -27,11 +29,11 @@ public class RelatorioEstoqueDTO {
         return quantidade;
     }
 
-    public Double getPreco() {
+    public BigDecimal getPreco() {
         return preco;
     }
 
-    public Double getValorTotal() {
+    public BigDecimal getValorTotal() {
         return valorTotal;
     }
 
